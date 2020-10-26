@@ -8,11 +8,14 @@ https://youtube.com/roundbeargames
 From Roundbeargames
 ~~~~~~~~~~~~~~~~~~~
 
-I added a line to get "current path".
+I'm using std::filesystem::current_path() to get "current path".
 Make sure the image file is in that directory.
-(or specify a directory yourself starting from the "current path")
+e.g. image1
 
-Author of this code is 'Code Break' from YouTube
+(or specify a directory yourself starting from the "current path")
+e.g. image2
+
+For more details, check out 'Code Break' from YouTube
 https://youtu.be/028GNYC32Rg
 https://github.com/Code-Break0/Image-Processing
 */
@@ -25,16 +28,18 @@ int main(int argc, char** argv)
 
 	std::cout << std::endl;
 	
-	Image image("randompic.jpg");
-
+	Image image1("randompic.jpg");
+	
 	std::cout << std::endl;
 
-	if (image.data != nullptr)
+	if (image1.data != nullptr)
 	{
-		std::cout << "file read successfully!" << std::endl;
-		std::cout << "width: " << image.w << std::endl;
-		std::cout << "height: " << image.h << std::endl;
+		std::cout << "image1 read successfully!" << std::endl;
+		std::cout << "width: " << image1.w << std::endl;
+		std::cout << "height: " << image1.h << std::endl;
 	}
+
+	Image image2("RandomFolder/randompic2.jpg");
 
 	return 0;
 }
